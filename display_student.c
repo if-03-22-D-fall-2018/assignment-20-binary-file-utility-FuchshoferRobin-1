@@ -6,7 +6,6 @@ int main(int argc, char const *argv[])
 char last_name[Length];
 char first_name[Length];
 int age;
-
 FILE* fd = fopen("student.dat", "r");
 
 fseek(fd,sizeof(int)+(atoi(argv[1])-1)*(sizeof(first_name)+sizeof(last_name)+sizeof(age)+sizeof(int)), SEEK_SET);
