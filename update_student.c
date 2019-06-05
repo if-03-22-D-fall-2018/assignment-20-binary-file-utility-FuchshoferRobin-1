@@ -9,15 +9,11 @@ int main(int argc, char const *argv[]) {
 
   printf("First Name: ");
   scanf("%s", first_name);
-
   printf("Last Name: ");
   scanf("%s", last_name);
-
   printf("Age: ");
   scanf("%d", &age);
-
   FILE* fd=fopen("student.dat","r+");
-
   fseek(fd,sizeof(int)+atoi(argv[1])*(sizeof(first_name)+sizeof(last_name)+sizeof(age)+sizeof(int))+sizeof(int),SEEK_SET);
 
   fwrite(first_name,sizeof(first_name),1,fd);
